@@ -71,7 +71,7 @@ function sendEmail(email, dealHeadline) {
     const msg = {
     to: email,
     from: process.env.SENDGRID_SENDER,
-    subject: dealHeadline,
+    subject: `(Areeb) ${dealHeadline}`,
     text: "Check out this new travel deal!",
     html: "Check out this new travel deal!"
     };
