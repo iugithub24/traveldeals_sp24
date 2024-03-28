@@ -38,8 +38,8 @@ exports.sendDeals = async (event, context) => {
             const watchedRegions = subscriberData.watch_regions;
 
             // Log the subscriber data
-            console.log(`Regions ${watchedRegions}`);
-            console.log(`Email: ${subscriberEmail}`);
+            console.log(`Subscriber Regions ${watchedRegions}`);
+            console.log(`Subscriber Email: ${subscriberEmail}`);
 
             // Query deals for each watched region
             watchedRegions.forEach(async region => {
@@ -83,4 +83,6 @@ function sendEmail(email, dealHeadline) {
     console.error(error);
     });
 
+    // Log a sent message
+    console.log(`Sent email to ${email}`);
 };
