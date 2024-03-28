@@ -4,3 +4,13 @@ This is a Google Cloud Function triggered by a new document in the `deals` colle
 
 ## Deployment Command
 **Ensure you have an active Google Cloud Project**
+
+# Deploy Statement
+
+```
+gcloud functions deploy sendDeals_firestore \
+--entry-point sendDeals \
+--runtime nodejs18 \
+--trigger-event "providers/cloud.firestore/eventTypes/document.create" \
+--trigger-resource "projects/travel-deals24/databases/(default)/documents/deals/{pushId}"
+```
